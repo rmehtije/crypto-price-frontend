@@ -1,0 +1,15 @@
+services:
+  frontend:
+    build: 
+      context: ./
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+    networks:
+      - backend_default
+    command: yarn dev --host
+
+networks:
+  backend_default:
+    external: true
