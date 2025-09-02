@@ -8,7 +8,10 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [svelte(), tailwindcss()],
     server: {
-      host: "0.0.0.0",
+      allowedHosts: [
+        "0.0.0.0",
+        "crypto-price-frontend-production.up.railway.app",
+      ],
       port: 3000,
       proxy: {
         "/api": env.VITE_API_BASE_URL,
