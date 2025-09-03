@@ -4,9 +4,13 @@ import { svelte } from "@sveltejs/vite-plugin-svelte";
 export default defineConfig({
   plugins: [svelte()],
   test: {
-    environment: "jsdom",
+    environment: "happy-dom",
     globals: true,
-    include: ["src/**/*.{test,spec}.{js,ts}"],
     setupFiles: ["src/vitest-setup.ts"],
   },
+  resolve: process.env.VITEST
+    ? {
+        conditions: ["browser"],
+      }
+    : undefined,
 });

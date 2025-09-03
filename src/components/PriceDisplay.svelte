@@ -57,7 +57,10 @@
     </div>
   </div>
 {:else}
-  <div class="bg-gray-800 rounded-2xl p-8 animate-pulse">
+  <div
+    data-testid="loading-skeleton"
+    class="bg-gray-800 rounded-2xl p-8 animate-pulse"
+  >
     <div class="h-8 bg-gray-700 rounded w-1/3 mb-6"></div>
     <div class="h-12 bg-gray-700 rounded w-1/2 mb-4"></div>
     <div class="h-6 bg-gray-700 rounded w-2/3"></div>
